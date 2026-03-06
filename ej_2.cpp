@@ -17,7 +17,7 @@ int main()
     productos_t producto;
     int i;
     int j;
-    for(i = 0; i < gondola.length(); i++)
+    for(i = 0; i < 3; i++)
     {
 
     }
