@@ -31,28 +31,28 @@ void cargar(vector <Empleado_t> &empleados)
     }
 }
 
-float empleadoConMayorSueldo(vector <Empleado_t> &empleados, vector <Empleado_t> &pobres)
+Empleado_t empleadoConMayorSueldo(vector <Empleado_t> &empleados, vector <Empleado_t> &pobres)
 {
     int i = 0;
     float comparador = empleados[i].salario;
+    Empleado_t empleado;
 
     for(i = 0; i < empleados.size(); i++)
     {
         if(empleados[i].salario <= 400000)
         {
             pobres.push_back(empleados[i]);
-            empleados.erase(empleados.begin() + i);
-            i--;
         }
         if(empleados[i].salario > comparador)
         {
             comparador = empleados[i].salario;
+            empleado = empleados[i];
         }
     }
-    return comparador;
+    return empleado;
 }
 
-int main()
+int main(void)
 {
     vector <Empleado_t> empleados;
     vector <Empleado_t> pobres;
@@ -63,7 +63,8 @@ int main()
 
     cargar(empleados);
 
-    cout << "mayor sueldo: " << empleadoConMayorSueldo(empleados, pobres) << endl;
+    empleado = empleadoConMayorSueldo(empleados, pobres);
+    cout << "mayor sueldo: " << empleado.nombre << endl;
 
     for(i = 0; i < (int)pobres.size(); i++)
     {
