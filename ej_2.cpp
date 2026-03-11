@@ -86,7 +86,7 @@ void promedioPrecios(vector <gondola_t> pasillo, int numero)
             suma += pasillo[numero].gondolas[i][j].precio;
         }
     }
-    promedio = suma / 12;
+    promedio = suma / (i*j);
     cout<<"promedio de precios: "<<promedio<<endl;
 }
 void cantidadProductos(vector <gondola_t> pasillo, int numero)
