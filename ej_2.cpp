@@ -54,17 +54,62 @@ void crearGondola(vector <gondola_t> &pasillo, int &numeroDeGondola)
     numeroDeGondola++;
     pasillo.push_back(gondola);
 }
-void loQuePidioElProfe(vector <gondola_t> pasillo, int numeroDeGondola)
+void mayorValor(vector <gondola_t> pasillo, int numero)
 {
-    int i;
-    int j;
-    int cantidad = 0;
-    int numero;
-    int columna;
-    string nombre;
-    float suma = 0;
     float precio = 0;
+    int columna = 0;
+    int i = 0;
+    int j = 0;
+    for(i = 0; i < 3; i++)
+    {
+        for(j = 0; j < 4; j++)
+        {
+            if(pasillo[numero].gondolas[i][j].precio > precio)
+            {
+                precio = pasillo[numero].gondolas[i][j].precio;
+                columna = j + 1;
+            }
+        }
+    }
+    cout<<"columna con precio de mas valor: "<<columna<<endl;
+}
+void promedioPrecios(vector <gondola_t> pasillo, int numero)
+{
+    int i = 0;
+    int j = 0;
+    float suma = 0;
     float promedio = 0;
+    for(i = 0; i < 3; i++)
+    {
+        for(j = 0; j < 4; j++)
+        {
+            suma += pasillo[numero].gondolas[i][j].precio;
+        }
+    }
+    promedio = suma / 12;
+    cout<<"promedio de precios: "<<promedio<<endl;
+}
+void cantidadProductos(vector <gondola_t> pasillo, int numero)
+{
+    int j = 0;
+    int i = 0;
+    int cantidad = 0;
+    for(i = 0; i < 3; i++)
+    {
+        for(j = 0; j < 4; j++)
+        {
+            if(pasillo[numero].gondolas[i][j].vence == true)
+            {
+                cantidad++;
+            }
+        }
+    }
+    cout<<"cantidad de productos con fecha de vencimiento: "<<cantidad<<endl;
+}
+void elegirGondola(vector <gondola_t> pasillo, int numeroDeGondola)
+{
+    int numero;
+    string nombre;
     do
     {
         cout<<"Numero de gondola a analizar: ";
@@ -76,32 +121,12 @@ void loQuePidioElProfe(vector <gondola_t> pasillo, int numeroDeGondola)
         }
     }while(numero > numeroDeGondola or numero <= 0);
     numero--;
-    for(i = 0; i < 3; i++)
-    {
-        for(j = 0; j < 4; j++)
-        {
-            suma += pasillo[numero].gondolas[i][j].precio;
-            if(pasillo[numero].gondolas[i][j].vence == true)
-            {
-                cantidad++;
-            }
-            if(pasillo[numero].gondolas[i][j].precio > precio)
-            {
-                precio = pasillo[numero].gondolas[i][j].precio;
-                columna = j + 1;
-            }
-        }
-    }
-    promedio = suma / 12;
+    mayorValor(pasillo, numero);
+    promedioPrecios(pasillo, numero);
+    cantidadProductos(pasillo, numero);
     nombre = pasillo[numero].gondolas[1][2].nombre;
-
-    cout<<"columna con precio de mas valor: "<<columna<<endl;
-    cout<<"nombre del producto de la gondola en [2] [3]: "<<nombre<<endl;
-    cout<<"promedio de precios: "<<promedio<<endl;
-    cout<<"cantidad de productos con fecha de vencimiento: "<<cantidad<<endl;
-    
 }
-int main()
+int main(void)
 {
     vector <gondola_t> pasillo;
     int numeroDeGondola = 1;
@@ -111,7 +136,7 @@ int main()
     {
         cout<<"Que queres hacer?"<<'\n'<<
         "   1- Crear gondolas"<<'\n'<<
-        "   2- Lo que pidio el profe"<<'\n'<<
+        "   2- Elegir gondola"<<'\n'<<
         "   3- Terminar"<<endl;
 
         cin>>respuesta;
@@ -122,14 +147,11 @@ int main()
         }
         else if(respuesta == 2)
         {
-            loQuePidioElProfe(pasillo, numeroDeGondola);
+            elegirGondola(pasillo, numeroDeGondola);
         }
-        else
+        else if (respuesta != 3)
         {
-            if(respuesta != 3)
-            {
-                cout<<"bobo"<<endl;
-            }
+            cout<<"bobo"<<endl;
         }
     }
     return 0;
