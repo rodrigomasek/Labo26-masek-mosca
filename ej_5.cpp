@@ -62,19 +62,27 @@ void masCara(pelicula_t funciones[3][4])
     nombre = funciones[fila][columna].nombre;
     imprimirNombre(nombre);
 }
-void buscarCelda(pelicula_t funciones[3][4], string dia, int hora)
+
+int convertirHora(string dia, int &hora)
 {
     int diaN;
-    int horaN;
-    string nombre;
+
     if(dia == "viernes"){diaN = 0;}
     if(dia == "sabado"){diaN = 1;}
     if(dia == "domingo"){diaN = 2;}
-    if(hora == 14){horaN = 0;}
-    if(hora == 16){horaN = 1;}
-    if(hora == 20){horaN = 2;}
-    if(hora == 22){horaN = 3;}
-    nombre = funciones[diaN][horaN].nombre;
+    if(hora == 14){hora = 0;}
+    if(hora == 16){hora = 1;}
+    if(hora == 20){hora = 2;}
+    if(hora == 22){hora = 3;}
+    return diaN;
+}
+
+void buscarCelda(pelicula_t funciones[3][4], string dia, int hora)
+{
+    int diaN;
+    string nombre;
+    diaN = convertirHora(dia, hora);
+    nombre = funciones[diaN][hora].nombre;
     imprimirNombre(nombre);
 }
 
@@ -89,13 +97,50 @@ void elegirFecha(pelicula_t funciones[3][4])
     cin.ignore();
     buscarCelda(funciones, dia, hora);
 }
+
+int taquillera(pelicula_t funciones [3][4])
+{
+    int i, j;
+    int cantidad = 0;
+
+    for(i = 0; i < 3; i++)
+    { 
+        for(j = 0; j < 4; j++)
+        { 
+            if(funciones[3][4].vendidas > 50)
+            {
+                cantidad++;
+            }
+        }
+    }
+    return cantidad;
+}
+
+void promedioNoche(pelicula_t funciones[3][4])
+{
+    int i, j;
+    float promedio = 0;
+
+    for(i = 0; i < 3; i++)
+    { 
+        for(j = 2; j < 4; j++)
+        { 
+            promedio += funciones[i][j].precio;
+        }
+    }
+    promedio = promedio / (3*2);
+
+    cout << promedio << endl;
+}
+
 int main(void)
 {
     pelicula_t funciones[3][4];
     llenarMatriz(funciones);
     elegirFecha(funciones);
     masCara(funciones);
-    
+    taquillera(funciones);
+    promedioNoche(funciones);
 
-
+    return 0;
 }
