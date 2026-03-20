@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class diaLaboral {
@@ -7,6 +8,7 @@ public class diaLaboral {
         String dia;
         System.out.print("Ingrese un dia de la semana xd: ");
         dia = scanner.nextLine();
+        dia = dia.toLowerCase();
         if(dia.equals(dias[0]) || dia.equals(dias[1]))
         {
             System.out.println("Dia inhabil");
