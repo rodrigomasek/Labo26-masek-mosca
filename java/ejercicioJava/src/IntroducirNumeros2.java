@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class IntroducirNumeros2 {
     public static void main(String[] args) {
         int cant = 0;
-        int num;
+        int num = 0;
         int may = 0;
         int men = 0;
         int sumT = 0;
@@ -15,9 +15,17 @@ public class IntroducirNumeros2 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Poneme el número que quieras excepto -1: ");
         num = scanner.nextInt();
-
+        men = num;
         while(num != -1)
         {
+            if(num > may)
+            {
+                may = num;
+            }
+            if(num < men)
+            {
+                may = num;
+            }
             if(num < 0)
             {
                 sumN += num;
@@ -29,10 +37,12 @@ public class IntroducirNumeros2 {
             sumT += num;
             num = scanner.nextInt();
             cant++;
-
-
-
         }
         System.out.println(cant);
+        System.out.println(may);
+        System.out.println(men);
+        System.out.println(cant);
+
+
     }
 }
