@@ -18,30 +18,35 @@ public class IntroducirNumeros2 {
         men = num;
         while(num != -1)
         {
+
             if(num > may)
             {
                 may = num;
             }
             if(num < men)
             {
-                may = num;
+                men = num;
             }
             if(num < 0)
             {
                 sumN += num;
             }
-            else if(num > 0)
+            else
             {
                 sumP += num;
             }
             sumT += num;
             num = scanner.nextInt();
             cant++;
+
+
         }
-        System.out.println(cant);
-        System.out.println(may);
-        System.out.println(men);
-        System.out.println(cant);
+        System.out.println("La cantidad de numeros introducidos es "+ cant);
+        System.out.println("El mayor numero introducido es " + may);
+        System.out.println("El menor numero introducido es " + men);
+        System.out.println("La suma de todos los numeros es " + sumT);
+        System.out.println("La suma de todos los numeros positivos es " + sumP);
+        System.out.println("La suma de todos los numeros negativos es " + sumN);
 
 
     }
