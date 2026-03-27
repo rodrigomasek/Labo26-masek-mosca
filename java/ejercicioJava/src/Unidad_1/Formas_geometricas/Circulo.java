@@ -18,15 +18,15 @@ public class Circulo {
         this.radio = radio;
     }
 
-    public double calcularArea(int radio){
-        double pi = 3.14;
+    public double calcularArea(){
+        double pi = 3.14159;
         double area;
 
         area = pi * (radio * radio);
 
         return area;
     }
-    public double calcularPerimetro(int radio){
+    public double calcularPerimetro(){
         double pi = 3.14;
         double perimetro;
 
@@ -42,8 +42,8 @@ public class Circulo {
         Circulo a1 = new Circulo(5);
         Circulo a2 = new Circulo();
 
-        area = a1.calcularArea(a1.getRadio());
-        perimetro = a1.calcularPerimetro(a1.getRadio());
+        area = a1.calcularArea();
+        perimetro = a1.calcularPerimetro();
 
         System.out.println(area);
         System.out.println(perimetro);

@@ -26,12 +26,12 @@ public class Rectangulo {
         this.altura = altura;
     }
 
-    public double obtenerArea(double base, double altura)
+    public double obtenerArea()
     {
         double area = base * altura;
         return area;
     }
-    public double obtenerPerimetro(double base, double altura)
+    public double obtenerPerimetro()
     {
         double perimetro = (2*base)+(2*altura);
         return perimetro;
@@ -41,8 +41,8 @@ public class Rectangulo {
         Rectangulo rectangulo1 = new Rectangulo(2,8);
         double area;
         double perimetro;
-        area = rectangulo1.obtenerArea(rectangulo1.getBase(), rectangulo1.getAltura());
-        perimetro = rectangulo1.obtenerPerimetro(rectangulo1.getBase(), rectangulo1.getAltura());
+        area = rectangulo1.obtenerArea();
+        perimetro = rectangulo1.obtenerPerimetro();
         System.out.println(area);
         System.out.println(perimetro);
     }
