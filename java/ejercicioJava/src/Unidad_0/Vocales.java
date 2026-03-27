@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Unidad_0;
 
 public class Vocales {
     public static void main(String[] args) {

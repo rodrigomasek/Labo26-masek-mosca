@@ -1,4 +1,5 @@
-import java.util.Locale;
+package Unidad_0;
+
 import java.util.Scanner;
 
 public class diaLaboral {

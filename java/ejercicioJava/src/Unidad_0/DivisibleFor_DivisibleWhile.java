@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Unidad_0;
 
 public class DivisibleFor_DivisibleWhile {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class DivisibleFor_DivisibleWhile {
 
         for(i = 1; i <= num; i++)
         {
-            if(i % 2 == 0 || i % 3 == 0)
+            if(i % 2 == 0 && i % 3 == 0)
             {
                 System.out.println(i);
             }

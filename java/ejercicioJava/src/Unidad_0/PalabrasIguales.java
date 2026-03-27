@@ -1,3 +1,5 @@
+package Unidad_0;
+
 import java.util.Scanner;
 public class PalabrasIguales {
     public static void main(String[] args) {
