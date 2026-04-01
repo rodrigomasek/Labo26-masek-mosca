@@ -1,5 +1,5 @@
-package Unidad_1.Formas_geometricas;
-import java.util.Scanner;
+package Formas_geometricas;
+
 public class Rectangulo {
     private double base;
     private double altura;

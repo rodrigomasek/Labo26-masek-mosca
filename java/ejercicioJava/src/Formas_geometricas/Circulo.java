@@ -1,4 +1,4 @@
-package Unidad_1.Formas_geometricas;
+package Formas_geometricas;
 
 public class Circulo {
     private int radio;
