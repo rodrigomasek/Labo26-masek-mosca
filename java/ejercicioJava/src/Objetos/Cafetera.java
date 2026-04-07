@@ -1,4 +1,4 @@
-package Lugares;
+package Objetos;
 
 public class Cafetera {
     private int cantidadAct;
