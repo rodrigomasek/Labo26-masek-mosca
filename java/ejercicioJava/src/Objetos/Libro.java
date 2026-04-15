@@ -88,7 +88,7 @@ public class Libro {
         System.out.println(this.editorial);
         if(fDePublicacion != null)
         {
-            System.out.println(this.fDePublicacion.getDia() + this.fDePublicacion.getMes() + this.fDePublicacion.getAnio());
+            System.out.println(this.fDePublicacion.getDia() + "-" + this.fDePublicacion.getMes() + "-" + this.fDePublicacion.getAnio());
         }
         else
         {
@@ -137,7 +137,7 @@ public class Libro {
         Libro l1 = new Libro();
         Libro l2 = new Libro("harry poper 31", autor);
         Libro l3 = new Libro("Los 4 chanchitos", autor, "777", 68, "Pan con manteca y mayonesa", fDePublicacion1);
-
+        l1.mostrarInfo();
     }
 
 }

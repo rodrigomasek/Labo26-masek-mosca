@@ -5,8 +5,12 @@ public class Cancion {
     private String autor;
 
     public Cancion() {
-        this.titulo = "";
-        this.autor = "";
+        this.titulo = "locura";
+        this.autor = "extrema";
+    }
+    public Cancion(String titulo) {
+        this.titulo = titulo;
+        this.autor = "extrema";
     }
 
     public Cancion(String titulo, String autor) {
