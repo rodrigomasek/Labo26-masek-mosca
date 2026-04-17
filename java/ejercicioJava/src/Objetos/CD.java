@@ -16,9 +16,8 @@ public class CD
     }
     public CD()
     {
-        ArrayList<Cancion> picardia = new ArrayList<>();
-        picardia.add(new Cancion());
-        this.canciones = picardia;
+        this.canciones = new ArrayList<>();
+        this.canciones.add(new Cancion());
     }
     public String verCancion(int posesão)
     {
