@@ -1,20 +1,30 @@
 package Animales;
 
-import Tiempo.Fecha;
+import Escuela.Materia;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Alumnos {
     private String nombre;
     private String apellido;
-    private Fecha fechaN;
+    private LocalDate fechaN;
     private ArrayList<Integer> notas;
+    private ArrayList<Materia> materias;
 
-    public Alumnos(String nombre, String apellido, Fecha fechaN, ArrayList<Integer> notas) {
+
+    public Alumnos(String nombre, String apellido, LocalDate fechaN, ArrayList<Integer> notas) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaN = fechaN;
         this.notas = notas;
+    }
+        public Alumnos() {
+        this.nombre = "messi";
+        this.apellido = "lionel";
+        this.fechaN = LocalDate.of(1986, 6, 7);
+        this.notas = new ArrayList<>();
+        this.materias = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -33,11 +43,11 @@ public class Alumnos {
         this.apellido = apellido;
     }
 
-    public Fecha getFechaN() {
+    public LocalDate getFechaN() {
         return fechaN;
     }
 
-    public void setFechaN(Fecha fechaN) {
+    public void setFechaN(LocalDate fechaN) {
         this.fechaN = fechaN;
     }
 
@@ -50,8 +60,8 @@ public class Alumnos {
     }
 
     public int menor(){
+        //no se hacer la validacion
         int valor = getNotas().get(1);
-
         for(int n : notas){
             if(n < valor){
                 valor = n;
@@ -62,6 +72,7 @@ public class Alumnos {
     }
 
     public int mayor(){
+        //no se hacer la validacion
         int valor = getNotas().get(1);
 
         for(int n : notas){
@@ -73,24 +84,39 @@ public class Alumnos {
         return valor;
     }
 
-    public void agregar(){
-        int n;
-
+    public void agregarN(int n){
+        this.notas.add(n);
 
     }
+    public void agregarM(Materia materia)
+    {
+        this.materias.add(materia);
+    }
+
+    public float promedioN()
+    {
+        float sum = 0;
+        float cant = 0;
+        int i = 0;
+        for(int n : notas)
+        {
+            sum += notas.get(i);
+            cant++;
+        }
+        return (sum/cant);
+    }
+
 
     public static void main(String[] args) {
         ArrayList<Integer> n1 = new ArrayList<>();
-        n1.add(10);
-        n1.add(2);
-        n1.add(3);
-        n1.add(67);
-        n1.add(-10);
-
-        Fecha f1 = new Fecha(1, 2, 2000);
+        LocalDate f1 = LocalDate.of(1000,6,7);
         Alumnos a1 = new Alumnos("juan", ":V",  f1, n1);
+
+        a1.agregarN(342);
+        a1.agregarN(3);
 
         System.out.println("minimo: " + a1.menor());
         System.out.println("mayor: " + a1.mayor());
+        Materia m1 = new Materia();
     }
 }
