@@ -1,57 +1,81 @@
 package Animales;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Persona {
     private String nombre;
-    private int edad;
+    private String apellido;
+    private LocalDate fechaN;
     private String dir;
 
-    public Persona(String nombre, int edad, String dir)
-    {
-    this.nombre = nombre;
-    this.edad = edad;
-    this.dir = dir;
+    public Persona() {
+        this.nombre = "nombre-default";
+        this.apellido = "apellido-default";
+        this.fechaN = LocalDate.of(6767,6,7);
+        this.dir = "dir-default";
+
     }
 
-    public String getNombre()
-    {
+    public Persona(String nombre, String apellido, LocalDate fechaN, String dir) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaN = fechaN;
+        this.dir = dir;
+    }
+    public Persona(String nombre, String apellido, LocalDate fechaN) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaN = fechaN;
+
+    }
+
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre)
-    {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public int getEdad()
-    {
-        return edad;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setEdad(int edad)
-    {
-        this.edad = edad;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getDir()
-    {
+    public LocalDate getFechaN() {
+        return fechaN;
+    }
+
+    public void setFechaN(LocalDate fechaN) {
+        this.fechaN = fechaN;
+    }
+
+    public String getDir() {
         return dir;
     }
 
-    public void setDir(String dir)
-    {
+    public void setDir(String dir) {
         this.dir = dir;
+    }
+
+    public int obtenerEdad()
+    {
+        return Period.between(this.fechaN, LocalDate.now()).getYears();
     }
 
     public void imprimir()
     {
         System.out.println("El nombre es " + nombre);
         System.out.println("La direccion es " + dir);
-        System.out.println("La edad es " + edad);
+        System.out.println("La edad es " + obtenerEdad());
     }
 
     public static void main(String[] args)
     {
-        Persona p1 = new Persona("Messi", 67, "Miami 7600 calle 14 bis");
-        p1.imprimir();
+
     }
 }

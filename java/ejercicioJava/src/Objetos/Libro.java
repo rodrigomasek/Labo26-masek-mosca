@@ -3,7 +3,7 @@ package Objetos;
 import Animales.Persona;
 import Tiempo.Fecha;
 
-public class Libro {
+public class Libro{
     private String titulo;
     private Persona autor;
     private String isbn;
@@ -14,7 +14,7 @@ public class Libro {
     public Libro()
     {
         this.titulo = "titulo";
-        this.autor = new Persona("juan", 67, "colegiales");
+        this.autor = new Persona();
         this.isbn = "ab231jj";
         this.paginas = 69;
         this.editorial = "Messi123";
@@ -81,7 +81,7 @@ public class Libro {
     {
         System.out.println(this.titulo);
         System.out.println(this.autor.getNombre());
-        System.out.println(this.autor.getEdad());
+        System.out.println(this.autor.obtenerEdad());
         System.out.println(this.autor.getDir());
         System.out.println(this.isbn);
         System.out.println(this.paginas);
@@ -132,7 +132,7 @@ public class Libro {
 
     }
     public static void main(String[] args) {
-        Persona autor = new Persona("jeremias", 55, "santos lugares");
+        Persona autor = new Persona();
         Fecha fDePublicacion1 = new Fecha(12, 12, 1212);
         Libro l1 = new Libro();
         Libro l2 = new Libro("harry poper 31", autor);

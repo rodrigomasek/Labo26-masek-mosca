@@ -5,51 +5,24 @@ import Escuela.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumnos {
-    private String nombre;
-    private String apellido;
-    private LocalDate fechaN;
+public class Alumnos extends Persona{
+
     private ArrayList<Integer> notas;
     private ArrayList<Materia> materias;
 
 
-    public Alumnos(String nombre, String apellido, LocalDate fechaN, ArrayList<Integer> notas) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaN = fechaN;
+    public Alumnos(String nombre, String apellido, LocalDate fechaN, ArrayList<Integer> notas, ArrayList<Materia> materia ) {
+
+        super(nombre,apellido,fechaN);
         this.notas = notas;
+        this.materias = materia;
     }
         public Alumnos() {
-        this.nombre = "messi";
-        this.apellido = "lionel";
-        this.fechaN = LocalDate.of(1986, 6, 7);
         this.notas = new ArrayList<>();
         this.materias = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public LocalDate getFechaN() {
-        return fechaN;
-    }
-
-    public void setFechaN(LocalDate fechaN) {
-        this.fechaN = fechaN;
-    }
 
     public ArrayList<Integer> getNotas() {
         return notas;
@@ -110,7 +83,7 @@ public class Alumnos {
     public static void main(String[] args) {
         ArrayList<Integer> n1 = new ArrayList<>();
         LocalDate f1 = LocalDate.of(1000,6,7);
-        Alumnos a1 = new Alumnos("juan", ":V",  f1, n1);
+        Alumnos a1 = new Alumnos();
 
         a1.agregarN(342);
         a1.agregarN(3);
