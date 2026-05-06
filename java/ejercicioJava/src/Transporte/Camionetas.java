@@ -3,29 +3,38 @@ package Transporte;
 import java.time.LocalDate;
 
 public class Camionetas extends Vehiculos{
-    private String patente;
-    private int kg;
+    private int cantActual;
+    private int cantMax;
 
-    public Camionetas(String marca, String modelo, String color, int cantRuedas, LocalDate fFabricacion, double velocidad, String patente, int kg) {
-        super(marca, modelo, color, cantRuedas, fFabricacion, velocidad);
+    public Camionetas(String marca, String modelo, String color, int cantRuedas, LocalDate fFabricacion, double velocidad, String patente, int cantActual, int cantMax) {
+        super(marca, modelo, color, cantRuedas, fFabricacion, velocidad, patente);
 
-        this.patente = patente;
-        this.kg = kg;
+        this.cantActual = cantActual;
+        this.cantMax = cantMax;
     }
 
-    public String getPatente() {
-        return patente;
+    public int getCantActual() {
+        return cantActual;
     }
 
-    public void setPatente(String patente) {
-        this.patente = patente;
+    public void setCantActual(int cantActual) {
+        this.cantActual = cantActual;
     }
 
-    public int getKg() {
-        return kg;
+    public int getCantMax() {
+        return cantMax;
     }
 
-    public void setKg(int kg) {
-        this.kg = kg;
+    public void setCantMax(int cantMax) {
+        this.cantMax = cantMax;
+    }
+
+    public void agregarCarga(int carga){
+        if((carga + this.cantActual) <= this.cantMax){
+            this.cantActual += carga;
+        }
+        else {
+            this.cantActual = this.cantMax;
+        }
     }
 }

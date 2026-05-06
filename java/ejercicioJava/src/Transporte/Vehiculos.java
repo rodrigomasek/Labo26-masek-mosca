@@ -9,6 +9,17 @@ public class Vehiculos {
     private int cantRuedas;
     private LocalDate fFabricacion;
     private double velocidad;
+    private String patente;
+
+    public Vehiculos(String marca, String modelo, String color, int cantRuedas, LocalDate fFabricacion, double velocidad, String patente) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.cantRuedas = cantRuedas;
+        this.fFabricacion = fFabricacion;
+        this.velocidad = velocidad;
+        this.patente = patente;
+    }
 
     public Vehiculos(String marca, String modelo, String color, int cantRuedas, LocalDate fFabricacion, double velocidad) {
         this.marca = marca;
@@ -65,5 +76,13 @@ public class Vehiculos {
 
     public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
+    }
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public void setPatente(String patente) {
+        this.patente = patente;
     }
 }

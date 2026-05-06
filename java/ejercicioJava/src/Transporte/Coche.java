@@ -3,13 +3,11 @@ package Transporte;
 import java.time.LocalDate;
 
 public class Coche extends Vehiculos{
-    private String patente;
     private boolean descapotado;
 
     public Coche(String marca, String modelo, String color, int cantRuedas, LocalDate fFabricacion, double velocidad, String patente, boolean descapotado) {
-        super(marca, modelo, color, cantRuedas, fFabricacion, velocidad);
+        super(marca, modelo, color, cantRuedas, fFabricacion, velocidad, patente);
 
-        this.patente = patente;
         this.descapotado = descapotado;
     }
 
@@ -25,4 +23,5 @@ public class Coche extends Vehiculos{
        return mov;
    }
 
+   
 }
