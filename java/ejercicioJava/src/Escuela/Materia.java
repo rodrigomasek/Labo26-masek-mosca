@@ -1,6 +1,6 @@
 package Escuela;
 
-import Animales.Alumnos;
+import Animales.Alumno;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,14 +9,14 @@ public class Materia {
 
     private String nombre;
     private ArrayList<String> listaContenidos;
-    private ArrayList<Alumnos> alumnosInscriptos;
+    private ArrayList<Alumno> alumnoInscriptos;
 
-    public ArrayList<Alumnos> getAlumnosInscriptos() {
-        return alumnosInscriptos;
+    public ArrayList<Alumno> getAlumnosInscriptos() {
+        return alumnoInscriptos;
     }
 
-    public void setAlumnosInscriptos(ArrayList<Alumnos> alumnosInscriptos) {
-        this.alumnosInscriptos = alumnosInscriptos;
+    public void setAlumnosInscriptos(ArrayList<Alumno> alumnoInscriptos) {
+        this.alumnoInscriptos = alumnoInscriptos;
     }
 
     public ArrayList<String> getListaContenidos() {
@@ -39,7 +39,7 @@ public class Materia {
     {
         this.nombre = "";
         this.listaContenidos = new ArrayList<>();
-        this.alumnosInscriptos = new ArrayList<>();
+        this.alumnoInscriptos = new ArrayList<>();
 
     }
     public float promedioE()
@@ -47,18 +47,18 @@ public class Materia {
         float sum = 0;
         float cant = 0;
         int i = 0;
-        for(Alumnos a : alumnosInscriptos)
+        for(Alumno a : alumnoInscriptos)
         {
-            sum += LocalDate.now().getYear() - this.alumnosInscriptos.get(i).getFechaN().getYear();
+            sum += LocalDate.now().getYear() - this.alumnoInscriptos.get(i).getFechaN().getYear();
             cant++;
         }
         return (sum/cant);
     }
-    public void agregarA(Alumnos a)
+    public void agregarA(Alumno a)
     {
-        if(!this.alumnosInscriptos.contains(a))
+        if(!this.alumnoInscriptos.contains(a))
         {
-            this.alumnosInscriptos.add(a);
+            this.alumnoInscriptos.add(a);
         }
 
     }
@@ -72,7 +72,7 @@ public class Materia {
     public void listar()
     {
         int i = 0;
-        for(Alumnos a : this.alumnosInscriptos)
+        for(Alumno a : this.alumnoInscriptos)
         {
             System.out.println(a.getNombre());
         }

@@ -11,6 +11,14 @@ public class Coche extends Vehiculos{
         this.descapotado = descapotado;
     }
 
+    public boolean isDescapotado() {
+        return descapotado;
+    }
+
+    public void setDescapotado(boolean descapotado) {
+        this.descapotado = descapotado;
+    }
+
     public String movimiento() {
        String mov;
 
@@ -22,6 +30,4 @@ public class Coche extends Vehiculos{
        }
        return mov;
    }
-
-   
 }

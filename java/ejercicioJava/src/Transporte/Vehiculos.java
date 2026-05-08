@@ -85,4 +85,8 @@ public class Vehiculos {
     public void setPatente(String patente) {
         this.patente = patente;
     }
+
+    public static void main(String[] args) {
+
+    }
 }

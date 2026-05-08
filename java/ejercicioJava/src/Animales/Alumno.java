@@ -5,21 +5,24 @@ import Escuela.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumnos extends Persona{
+public class Alumno extends Persona{
 
     private ArrayList<Integer> notas;
     private ArrayList<Materia> materias;
+    private String division;
 
 
-    public Alumnos(String nombre, String apellido, LocalDate fechaN, ArrayList<Integer> notas, ArrayList<Materia> materia ) {
+    public Alumno(String nombre, String apellido, LocalDate fechaN, ArrayList<Integer> notas, ArrayList<Materia> materia, String division ) {
 
         super(nombre,apellido,fechaN);
         this.notas = notas;
         this.materias = materia;
+        this.division = division;
     }
-        public Alumnos() {
+        public Alumno() {
         this.notas = new ArrayList<>();
         this.materias = new ArrayList<>();
+        this.division = "A";
     }
 
 
@@ -82,14 +85,16 @@ public class Alumnos extends Persona{
 
     public static void main(String[] args) {
         ArrayList<Integer> n1 = new ArrayList<>();
+        ArrayList<Materia> m1 = new ArrayList<>();
         LocalDate f1 = LocalDate.of(1000,6,7);
-        Alumnos a1 = new Alumnos();
+        Alumno a1 = new Alumno();
+        Alumno a2 = new Alumno("juan","perez",LocalDate.of(2018, 12, 9), n1, m1, "C");
 
         a1.agregarN(342);
         a1.agregarN(3);
 
         System.out.println("minimo: " + a1.menor());
         System.out.println("mayor: " + a1.mayor());
-        Materia m1 = new Materia();
+
     }
 }

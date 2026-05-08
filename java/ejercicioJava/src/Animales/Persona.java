@@ -1,6 +1,11 @@
 package Animales;
 
+import Restaurante.Pedido;
+import Restaurante.Pedidos;
+import Restaurante.Platillo;
+
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Period;
 
 public class Persona {
@@ -27,7 +32,10 @@ public class Persona {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaN = fechaN;
-
+    }
+    public Persona(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
 
     public String getNombre() {
@@ -72,6 +80,11 @@ public class Persona {
         System.out.println("El nombre es " + nombre);
         System.out.println("La direccion es " + dir);
         System.out.println("La edad es " + obtenerEdad());
+    }
+    public Pedido crearPedido (Platillo pl)
+    {
+        Pedido p = new Pedido(false, LocalTime.now(), this, pl, LocalDate.now());
+        return p;
     }
 
     public static void main(String[] args)
