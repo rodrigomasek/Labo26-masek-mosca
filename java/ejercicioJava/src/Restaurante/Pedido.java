@@ -60,6 +60,11 @@ public class Pedido {
         this.fCreacion = fCreacion;
     }
 
+    public void entregar()
+    {
+        this.entregado = true;
+    }
+
     public static void main(String[] args) {
 
     }

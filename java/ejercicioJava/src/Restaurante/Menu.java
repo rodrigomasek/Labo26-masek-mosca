@@ -16,7 +16,7 @@ public class Menu {
     public Menu(ArrayList<Platillo> platillos) {
         this.platillos = platillos;
     }
-    // modificar y eliminar platos
+    // eliminar platos
     public void agrega(Platillo p)
     {
         this.platillos.add(p);
@@ -24,6 +24,10 @@ public class Menu {
     public void modificar(int posicion, Platillo p)
     {
         this.platillos.set(posicion, p);
+    }
+    public void modificar(int posicion)
+    {
+        this.platillos.remove(posicion);
     }
     public static void main(String[] args) {
 
