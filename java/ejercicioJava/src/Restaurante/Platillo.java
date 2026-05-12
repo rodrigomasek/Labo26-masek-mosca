@@ -26,7 +26,6 @@ public class Platillo {
     }
 
     public static void main(String[] args) {
-
     }
 }
 
