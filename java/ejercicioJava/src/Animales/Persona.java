@@ -28,11 +28,13 @@ public class Persona {
         this.fechaN = fechaN;
         this.dir = dir;
     }
+
     public Persona(String nombre, String apellido, LocalDate fechaN) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaN = fechaN;
     }
+
     public Persona(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
