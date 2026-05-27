@@ -165,14 +165,7 @@ public class Empresa {
       //TODO: Ver el detalle de todas las llamadas de la empresa por empleado
 
         for (Empleado empleado : empleados) {
-
-            System.out.println("Empleado: " + empleado.getNombreCompleto());
-
-            for (Llamada llamada : llamadas) {
-                if (llamada.fueRealizadaPor(empleado)) {
-                    System.out.println(llamada.obtenerDetalle());
-                }
-            }
+            mostrarLlamadasDe(empleado);
         }
     }
 
