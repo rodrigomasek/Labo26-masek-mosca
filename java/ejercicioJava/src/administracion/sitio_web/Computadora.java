@@ -40,5 +40,5 @@ public class Computadora {
         this.salidas = salidas;
     }
 
-    
+
 }

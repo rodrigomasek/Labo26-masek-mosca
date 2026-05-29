@@ -38,22 +38,11 @@ public class Equipos {
         return contador;
     }
 
-    public boolean tieneDisponibilidad(Jugador j) {
-        for (String dispo : j.getDisponibilidad()) {
-            if (dispo != null && !dispo.isEmpty()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void llenar(Jugador j) {
 
         if (jugadores.size() >= 11) return;
 
         if (!numeroCamisaDisponible(j)) return;
-
-        if (!tieneDisponibilidad(j)) return;
 
         if (j.isCapitan() && contarCapitanes() > 0) return;
 

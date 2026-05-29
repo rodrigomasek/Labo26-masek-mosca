@@ -8,8 +8,10 @@ public class Libro{
     private Persona autor;
     private String isbn;
     private int paginas;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fDePublicacion;
+
+    public enum Editorial {KAPELUSZ, SUDAMERICANA, ATLÁNTIDA, EL_ATENEO, INTERZONA, SUR, ALIANZA}
 
     public Libro()
     {
@@ -17,10 +19,10 @@ public class Libro{
         this.autor = new Persona();
         this.isbn = "ab231jj";
         this.paginas = 69;
-        this.editorial = "Messi123";
+        this.editorial = Editorial.ALIANZA ;
         this.fDePublicacion = new Fecha(9,12,2018);
     }
-    public Libro(String titulo, Persona autor, String isbn, int paginas, String editorial, Fecha fDePublicacion) {
+    public Libro(String titulo, Persona autor, String isbn, int paginas, Editorial editorial, Fecha fDePublicacion) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -48,7 +50,7 @@ public class Libro{
     {
         return paginas;
     }
-    public String getEditorial()
+    public Editorial getEditorial()
     {
         return editorial;
     }
@@ -70,7 +72,7 @@ public class Libro{
     public void setPaginas(int paginas) {
         this.paginas = paginas;
     }
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
     public void setfDePublicacion(Fecha fDePublicacion) {
@@ -131,12 +133,20 @@ public class Libro{
         }
 
     }
+    public void mostrartela()
+    {
+        Editorial[] todas = Editorial.values();
+        for(Editorial e : todas)
+        {
+            System.out.println(e);
+        }
+    }
     public static void main(String[] args) {
         Persona autor = new Persona();
         Fecha fDePublicacion1 = new Fecha(12, 12, 1212);
         Libro l1 = new Libro();
         Libro l2 = new Libro("harry poper 31", autor);
-        Libro l3 = new Libro("Los 4 chanchitos", autor, "777", 68, "Pan con manteca y mayonesa", fDePublicacion1);
+        Libro l3 = new Libro("Los 4 chanchitos", autor, "777", 67, Editorial.ALIANZA, fDePublicacion1);
         l1.mostrarInfo();
     }
 

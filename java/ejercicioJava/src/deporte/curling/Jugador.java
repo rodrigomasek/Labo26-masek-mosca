@@ -8,10 +8,12 @@ public class Jugador {
     private String apellido;
     private LocalDate fNacimiento;
     private int numCamisa;
-    private ArrayList<String> disponibilidad;
+    private ArrayList<Disponibilidad> disponibilidad;
     private boolean capitan;
 
-    public Jugador(String nombre, String apellido, LocalDate fNacimiento, int numCamisa, ArrayList<String> disponibilidad, boolean capitan) {
+    public enum Disponibilidad{MAÑANA, TARDE, NOCHE}
+
+    public Jugador(String nombre, String apellido, LocalDate fNacimiento, int numCamisa, ArrayList<Disponibilidad> disponibilidad, boolean capitan) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fNacimiento = fNacimiento;
@@ -52,11 +54,11 @@ public class Jugador {
         this.numCamisa = numCamisa;
     }
 
-    public ArrayList<String> getDisponibilidad() {
+    public ArrayList<Disponibilidad> getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(ArrayList<String> disponibilidad) {
+    public void setDisponibilidad(ArrayList<Disponibilidad> disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
@@ -67,19 +69,4 @@ public class Jugador {
     public void setCapitan(boolean capitan) {
         this.capitan = capitan;
     }
-
-    public String disponible(){
-        String resu = "";
-
-        for(String dia : disponibilidad){
-            switch (dia) {
-                case "mañana" -> resu += dia + " ";
-                case "tarde" -> resu += dia + " ";
-                case "noche" -> resu += dia + " ";
-            }
-        }
-
-        return resu;
-    }
-
 }
