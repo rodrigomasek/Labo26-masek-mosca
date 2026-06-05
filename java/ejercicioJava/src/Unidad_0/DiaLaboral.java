@@ -1,3 +1,5 @@
+package Unidad_0;
+
 import java.util.Scanner;
 
 public class DiaLaboral {

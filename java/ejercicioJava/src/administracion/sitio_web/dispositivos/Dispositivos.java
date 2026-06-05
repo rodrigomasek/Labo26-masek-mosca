@@ -10,6 +10,13 @@ public class Dispositivos extends Componentes {
         this.puertosDisponibles = puertosDisponibles;
     }
 
+    public Dispositivos() {
+        super();
+    }
+
+    public Dispositivos(int puertosDisponibles) {
+    }
+
     public int getPuertosDisponibles() {
         return puertosDisponibles;
     }

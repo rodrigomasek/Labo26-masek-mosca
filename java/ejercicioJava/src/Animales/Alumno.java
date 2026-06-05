@@ -1,6 +1,7 @@
 package Animales;
 
 import Escuela.Materia;
+import enums.Division;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,23 +10,39 @@ public class Alumno extends Persona{
 
     private ArrayList<Integer> notas;
     private ArrayList<Materia> materias;
-    private String division;
+    private Division division;
 
 
-    public Alumno(String nombre, String apellido, LocalDate fechaN, ArrayList<Integer> notas, ArrayList<Materia> materia, String division ) {
-
-        super(nombre,apellido,fechaN);
+    public Alumno(ArrayList<Integer> notas, ArrayList<Materia> materias, Division division) {
         this.notas = notas;
-        this.materias = materia;
+        this.materias = materias;
         this.division = division;
     }
-        public Alumno() {
-        this.notas = new ArrayList<>();
-        this.materias = new ArrayList<>();
-        this.division = "A";
+
+    public Alumno(String nombre, String apellido, LocalDate fechaN, String dir, ArrayList<Integer> notas, ArrayList<Materia> materias, Division division) {
+        super(nombre, apellido, fechaN, dir);
+        this.notas = notas;
+        this.materias = materias;
+        this.division = division;
     }
 
+    public Alumno(String nombre, String apellido, LocalDate fechaN, ArrayList<Integer> notas, ArrayList<Materia> materias, Division division) {
+        super(nombre, apellido, fechaN);
+        this.notas = notas;
+        this.materias = materias;
+        this.division = division;
+    }
 
+    public Alumno(String nombre, String apellido, ArrayList<Integer> notas, ArrayList<Materia> materias, Division division) {
+        super(nombre, apellido);
+        this.notas = notas;
+        this.materias = materias;
+        this.division = division;
+    }
+
+    public Alumno() {
+
+    }
 
     public ArrayList<Integer> getNotas() {
         return notas;
@@ -88,7 +105,7 @@ public class Alumno extends Persona{
         ArrayList<Materia> m1 = new ArrayList<>();
         LocalDate f1 = LocalDate.of(1000,6,7);
         Alumno a1 = new Alumno();
-        Alumno a2 = new Alumno("juan","perez",LocalDate.of(2018, 12, 9), n1, m1, "C");
+        Alumno a2 = new Alumno("juan","perez",LocalDate.of(2018, 12, 9), n1, m1, Division.C);
 
         a1.agregarN(342);
         a1.agregarN(3);

@@ -1,13 +1,15 @@
 package Empresa_llamadas;
 
+import enums.CodigoPais;
+
 public class Empleado extends Persona {
     private String telefono;
     private String provincia;
-    private String codigoPais;
+    private CodigoPais codigoPais;
     private String franjaHoraria;
 
     public Empleado(String nombre, String apellido, String dni, String pais,
-                    String telefono, String provincia, String codigoPais, String franjaHoraria) {
+                    String telefono, String provincia, CodigoPais codigoPais, String franjaHoraria) {
         super(nombre, apellido, dni, pais);
         this.telefono = telefono;
         this.provincia = provincia;
@@ -23,7 +25,7 @@ public class Empleado extends Persona {
         return provincia;
     }
 
-    public String getCodigoPais() {
+    public CodigoPais getCodigoPais() {
         return codigoPais;
     }
 

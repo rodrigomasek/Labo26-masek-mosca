@@ -1,47 +1,38 @@
 package Lugares.museo;
 
+import enums.NivelConservacion;
+
 public class Cuadro {
+
     private String titulo;
     private String pintor;
     private int anioCreacion;
-    private int conservacion;
+    private NivelConservacion conservacion;
 
-    public String getTitulo(){
-        return titulo;
+    public Cuadro(String titulo, String pintor, int anioCreacion, NivelConservacion conservacion) {
+        this.titulo = titulo;
+        this.pintor = pintor;
+        this.anioCreacion = anioCreacion;
+        this.conservacion = conservacion;
     }
 
-    public void setTitulo(String titulo){
-        this.titulo = titulo;
+    public String getTitulo() {
+        return titulo;
     }
 
     public String getPintor() {
         return pintor;
     }
 
-    public void setPintor(String pintor) {
-        this.pintor = pintor;
-    }
-
     public int getAnioCreacion() {
         return anioCreacion;
     }
 
-    public void setAnioCreacion(int anioCreacion) {
-        this.anioCreacion = anioCreacion;
-    }
-
-    public int getConservacion() {
+    public NivelConservacion getConservacion() {
         return conservacion;
     }
 
-    public void setConservacion(int conservacion) {
-        this.conservacion = conservacion;
-    }
-
-    public Cuadro(String titulo, String pintor, int anioCreacion, int conservacion) {
-        this.titulo = titulo;
-        this.pintor = pintor;
-        this.anioCreacion = anioCreacion;
+    public void setConservacion(NivelConservacion conservacion) {
         this.conservacion = conservacion;
     }
 }

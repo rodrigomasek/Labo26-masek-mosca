@@ -8,7 +8,7 @@ public class LlamadaInternacional extends Llamada {
 
     public LlamadaInternacional(Empleado origen, Empleado destino, int duracionMinutos) {
         super(origen, destino, duracionMinutos);
-        this.codigoPaisDestino = destino.getCodigoPais();
+        this.codigoPaisDestino = String.valueOf(destino.getCodigoPais());
         this.franjaHoraria = destino.getFranjaHoraria();
         this.costoPorMinuto = 50;
         this.cargoInternacional = 100;

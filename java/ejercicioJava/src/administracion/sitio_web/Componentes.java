@@ -13,6 +13,10 @@ public class Componentes {
         this.stock = stock;
     }
 
+    public Componentes() {
+
+    }
+
     public String getNombreFabricante() {
         return nombreFabricante;
     }

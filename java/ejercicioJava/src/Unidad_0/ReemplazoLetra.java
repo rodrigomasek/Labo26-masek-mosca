@@ -1,4 +1,5 @@
-import java.util.Scanner;
+package Unidad_0;
+
 public class ReemplazoLetra {
     public static void main(String[] args) {
         String texto = "Ayer me compré muñecos de la marca ‘ToyCo’ por internet.";
