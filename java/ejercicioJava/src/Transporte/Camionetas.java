@@ -6,7 +6,7 @@ public class Camionetas extends Vehiculos{
     private int cantActual;
     private int cantMax;
 
-    public Camionetas(String marca, String modelo, String color, int cantRuedas, LocalDate fFabricacion, double velocidad, String patente, int cantActual, int cantMax) {
+    public Camionetas(String marca, String modelo, Color color, int cantRuedas, LocalDate fFabricacion, double velocidad, String patente, int cantActual, int cantMax) {
         super(marca, modelo, color, cantRuedas, fFabricacion, velocidad, patente);
 
         this.cantActual = cantActual;

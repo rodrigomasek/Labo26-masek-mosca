@@ -75,10 +75,10 @@ public class EmpresaVehiculos {
     }
 
     public static void main(String[] args) {
-        Coche c1 = new Coche("hoa", "hola", "noego", 4, LocalDate.of(1999, 2, 2), 20, "xlr8", true);
-        Coche c2 = new Coche("ho1a", "hol2a", "noe2go", 4, LocalDate.of(19299, 2, 2), 220, "22xlr8", true);
-        Coche c3 = new Coche("hoa", "hola", "noegso", 4, LocalDate.of(1929, 2, 2), 25, "x8", false);
-        Camionetas ca1 = new Camionetas("fa", "35d", "azul", 5, LocalDate.of(2000, 12, 27), 53, "ojsdf", 100, 1000);
+        Coche c1 = new Coche("hoa", "hola", Vehiculos.Color.AMARILLO, 4, LocalDate.of(1999, 2, 2), 20, "xlr8", true);
+        Coche c2 = new Coche("ho1a", "hol2a", Vehiculos.Color.AMARILLO, 4, LocalDate.of(19299, 2, 2), 220, "22xlr8", true);
+        Coche c3 = new Coche("hoa", "hola", Vehiculos.Color.AMARILLO, 4, LocalDate.of(1929, 2, 2), 25, "x8", false);
+        Camionetas ca1 = new Camionetas("fa", "35d", Vehiculos.Color.AMARILLO , 5, LocalDate.of(2000, 12, 27), 53, "ojsdf", 100, 1000);
         ArrayList<Vehiculos> a1 = new ArrayList<>();
         EmpresaVehiculos ev1 = new EmpresaVehiculos(a1);
 
