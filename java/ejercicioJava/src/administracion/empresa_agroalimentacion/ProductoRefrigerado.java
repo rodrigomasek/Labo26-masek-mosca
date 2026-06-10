@@ -12,11 +12,22 @@ public class ProductoRefrigerado extends Producto{
         this.temperaturaRecomendada = temperaturaRecomendada;
     }
 
+    public ProductoRefrigerado(){
+        super(LocalDate.now(), 123, "juan2", "ultra n1664", PaisOrigen.BRASIL, LocalDate.now());
+        this.temperaturaRecomendada = 100;
+    }
+
     public int getTemperaturaRecomendada() {
         return temperaturaRecomendada;
     }
 
     public void setTemperaturaRecomendada(int temperaturaRecomendada) {
         this.temperaturaRecomendada = temperaturaRecomendada;
+    }
+
+    @Override
+    public String infoNutricional(){
+        return super.infoNutricional()
+        + " | vitamina b1231 = 243";
     }
 }

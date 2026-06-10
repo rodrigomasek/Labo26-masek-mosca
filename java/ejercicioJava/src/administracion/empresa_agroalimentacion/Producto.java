@@ -57,15 +57,21 @@ public class Producto {
         return paisOrigen;
     }
 
-    public void setPaisOrigen(PaisOrigen paisOrigen) {
-        this.paisOrigen = paisOrigen;
-    }
-
     public LocalDate getFechaEnvasado() {
         return fechaEnvasado;
     }
 
     public void setFechaEnvasado(LocalDate fechaEnvasado) {
         this.fechaEnvasado = fechaEnvasado;
+    }
+
+    public String toString(){
+        return "codigo: " + codigo
+        + " | numero de lote: " + numeroLote;
+    }
+
+    public String infoNutricional(){
+        return "carbon = 10"
+        + " | vitamina c = 3";
     }
 }
