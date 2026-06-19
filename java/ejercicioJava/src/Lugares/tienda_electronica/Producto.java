@@ -2,7 +2,7 @@ package Lugares.tienda_electronica;
 
 import enums.Categoria_Electronica;
 
-public class Producto {
+public abstract class Producto {
     private String nombre;
     private double precio;
     private int stock;

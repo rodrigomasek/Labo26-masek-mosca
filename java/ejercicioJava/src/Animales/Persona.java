@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Period;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
     private LocalDate fechaN;
@@ -19,7 +19,6 @@ public class Persona {
         this.apellido = "apellido-default";
         this.fechaN = LocalDate.of(6767,6,7);
         this.dir = "dir-default";
-
     }
 
     public Persona(String nombre, String apellido, LocalDate fechaN, String dir) {
@@ -85,8 +84,7 @@ public class Persona {
     }
     public Pedido crearPedido (Platillo pl)
     {
-        Pedido p = new Pedido(false, LocalTime.now(), this, pl, LocalDate.now());
-        return p;
+        return new Pedido(false, LocalTime.now(), this, pl, LocalDate.now());
     }
 
     public static void main(String[] args)

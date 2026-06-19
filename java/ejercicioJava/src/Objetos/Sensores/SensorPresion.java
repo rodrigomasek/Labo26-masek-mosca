@@ -7,9 +7,8 @@ public class SensorPresion extends Sensor{
         super(fechaAdquirido, umbral, medida, estado);
     }
     @Override
-    public int activarAlarma() {
+    public void activarAlarma() {
         System.out.println("Sensor de presion activado");
-        return 1;
     }
 
     public static void main(String[] args) {

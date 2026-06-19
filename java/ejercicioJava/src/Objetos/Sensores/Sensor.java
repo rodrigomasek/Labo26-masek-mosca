@@ -3,7 +3,7 @@ package Objetos.Sensores;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Sensor {
+public abstract class Sensor {
     private boolean estado;
     private double medida;
     private double umbral;
@@ -54,10 +54,7 @@ public class Sensor {
             activarAlarma();
         }
     }
-    public int activarAlarma()
-    {
-        return 1;
-    }
+    public abstract void activarAlarma();
 
     public boolean estaConectado()
     {

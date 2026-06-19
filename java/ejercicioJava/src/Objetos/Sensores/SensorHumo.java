@@ -9,9 +9,8 @@ public class SensorHumo extends Sensor{
         super(fechaAdquirido, umbral, medida, estado);
     }
     @Override
-    public int activarAlarma() {
+    public void activarAlarma() {
         System.out.println("Alarma de humo activada. Llamando a los bomberos.");
-        return 1;
     }
 
     public static void main(String[] args) {

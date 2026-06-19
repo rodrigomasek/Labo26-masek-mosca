@@ -1,5 +1,6 @@
 package Objetos;
 
+import Animales.Autor;
 import Animales.Persona;
 import Tiempo.Fecha;
 
@@ -16,7 +17,7 @@ public class Libro{
     public Libro()
     {
         this.titulo = "titulo";
-        this.autor = new Persona();
+        this.autor = new Autor();
         this.isbn = "ab231jj";
         this.paginas = 69;
         this.editorial = Editorial.ALIANZA ;
@@ -142,7 +143,7 @@ public class Libro{
         }
     }
     public static void main(String[] args) {
-        Persona autor = new Persona();
+        Persona autor = new Autor();
         Fecha fDePublicacion1 = new Fecha(12, 12, 1212);
         Libro l1 = new Libro();
         Libro l2 = new Libro("harry poper 31", autor);
