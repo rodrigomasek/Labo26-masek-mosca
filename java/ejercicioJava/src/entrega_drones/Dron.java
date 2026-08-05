@@ -13,12 +13,13 @@ public abstract class Dron {
     private Estado estado;
     private Mision mision;
 
-    public Dron(String nombreModelo, LocalDate fAdquirido, double bateria, int id, Estado estado) {
+    public Dron(String nombreModelo, LocalDate fAdquirido, double bateria, int id, Estado estado, Mision mision) {
         this.nombreModelo = nombreModelo;
         this.fAdquirido = fAdquirido;
         this.bateria = bateria;
         this.id = id;
         this.estado = estado;
+        this.mision = mision;
     }
 
     public static int getSiguienteId() {
@@ -69,11 +70,21 @@ public abstract class Dron {
         this.estado = estado;
     }
 
-    public void recargarBateria()
-    {
-        if(this.bateria < 20){this.bateria = 100;}
-        else{this.bateria += 10;}
+    public Mision getMision() {
+        return mision;
+    }
+
+    public void setMision(Mision mision) {
+        this.mision = mision;
     }
 
     public abstract boolean hacerMision();
+    public double rastrearDron()
+    {
+        if(this.estado.equals(Estado.EN_VUELO) || this.estado.equals(Estado.EN_OPERATIVO))
+        {
+            return 1;
+        }
+        return -1;
+    }
 }
