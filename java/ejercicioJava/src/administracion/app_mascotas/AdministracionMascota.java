@@ -33,17 +33,23 @@ public class AdministracionMascota {
         mascotas.set(index, m1);
     }
 
-    public String saludarUsuario(String nombreU, String nombreM){
+    public String saludarMenu(String nombreU, String nombreM){
+        String text = "nada";
+
         for(Mascota m : mascotas){
             if(m.getNombre().equals(nombreM)){
-                if(m.getDueño().equals(nombreU)){
-                    return "guau";
-                }
-                    return "GUAU";
+                text = m.saludarUsuario(nombreU, nombreM);
             }
         }
-        return "algo salio mal";
+        return text;
     }
 
-    // TODO: hacer el metodo en la clase mascotas y que cada una decida como saludar
+    public void animalesMuertos(){
+        for(int i = 0; i < mascotas.size(); i++) {
+            if (mascotas.get(i).debeEliminarse()) {
+                mascotas.remove(i);
+                i--;
+            }
+        }
+    }
 }
