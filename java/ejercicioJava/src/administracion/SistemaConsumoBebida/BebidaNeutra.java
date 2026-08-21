@@ -1,4 +1,4 @@
-package Sistema1;
+package administracion.SistemaConsumoBebida;
 
 class BebidaNeutra extends Bebida {
 

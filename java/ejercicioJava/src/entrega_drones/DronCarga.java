@@ -25,8 +25,20 @@ public class DronCarga extends Dron{
         if (this.getBateria() >= 48 && this.getMision().obtenerKm() < 30)
         {
             setBateria(this.getBateria() - 48);
-            return true;
+            if(this.getBateria() >= 48)
+            {
+                this.getMision().setExito(true);
+                return true;
+            }
+            return false;
+
         }
-        return false;
+        else
+        {
+            //re mal esto
+            this.getMision().setExito(false);
+            return false;
+        }
+
     }
 }

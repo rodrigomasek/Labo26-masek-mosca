@@ -20,8 +20,4 @@ public class Sistema {
         this.drones = drones;
     }
 
-    public static void main(String[] args) {
-        Dron d1 = new DronCarga("DJI Phantom 4", LocalDate.of(2025, 3, 15), 5200.0, 1, Estado.EN_VUELO, new Mision(), 2.5);
-        Dron d2 = new DronVigilancia("DJI Phantom 4", LocalDate.of(2025, 3, 15), 5200.0, 1, Estado.EN_VUELO, new Mision(), 200);
-    }
 }

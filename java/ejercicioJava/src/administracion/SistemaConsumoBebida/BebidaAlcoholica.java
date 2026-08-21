@@ -1,4 +1,4 @@
-package Sistema1;
+package administracion.SistemaConsumoBebida;
 
 class BebidaAlcoholica extends Bebida {
     private double cantidadAlcohol;

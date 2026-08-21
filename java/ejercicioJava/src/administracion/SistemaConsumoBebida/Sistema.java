@@ -1,4 +1,4 @@
-package Sistema1;
+package administracion.SistemaConsumoBebida;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,6 @@ class Sistema {
         personas = new ArrayList<>();
         bebidas = new ArrayList<>();
     }
-
-    // ---------- PERSONAS ----------
 
     public boolean agregarPersona(Persona persona) {
 
@@ -34,7 +32,6 @@ class Sistema {
         return null;
     }
 
-    // ---------- BEBIDAS ----------
 
     public void agregarBebida(Bebida bebida) {
         bebidas.add(bebida);
@@ -70,7 +67,6 @@ class Sistema {
         }
     }
 
-    // ---------- MEJOR Y PEOR ----------
 
     public Persona obtenerMejorCoeficiente() {
 

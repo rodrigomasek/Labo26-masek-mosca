@@ -1,10 +1,49 @@
 package entrega_drones;
 
 public class Mision {
-    private double longitudOrigen;
-    private double latitudOrigen;
+    private final double longitudOrigen = -58.504111;
+    private final double latitudOrigen = -34.573195;
     private double longitudDestino;
     private double latitudDestino;
+    private boolean exito;
+
+    public double getLongitudOrigen() {
+        return longitudOrigen;
+    }
+
+    public double getLatitudOrigen() {
+        return latitudOrigen;
+    }
+
+    public double getLongitudDestino() {
+        return longitudDestino;
+    }
+
+    public void setLongitudDestino(double longitudDestino) {
+        this.longitudDestino = longitudDestino;
+    }
+
+    public double getLatitudDestino() {
+        return latitudDestino;
+    }
+
+    public void setLatitudDestino(double latitudDestino) {
+        this.latitudDestino = latitudDestino;
+    }
+
+    public boolean isExito() {
+        return exito;
+    }
+
+    public void setExito(boolean exito) {
+        this.exito = exito;
+    }
+
+    public Mision(double longitudDestino, double latitudDestino, boolean exito) {
+        this.longitudDestino = longitudDestino;
+        this.latitudDestino = latitudDestino;
+        this.exito = exito;
+    }
 
     public double obtenerKm()
     {

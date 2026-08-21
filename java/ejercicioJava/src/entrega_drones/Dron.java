@@ -4,7 +4,7 @@ import enums.Estado;
 
 import java.time.LocalDate;
 
-public abstract class Dron {
+public abstract class  Dron {
     private static int siguienteId;
     private String nombreModelo;
     private LocalDate fAdquirido;
@@ -17,9 +17,10 @@ public abstract class Dron {
         this.nombreModelo = nombreModelo;
         this.fAdquirido = fAdquirido;
         this.bateria = bateria;
-        this.id = id;
+        this.id = siguienteId;
         this.estado = estado;
         this.mision = mision;
+        siguienteId++;
     }
 
     public static int getSiguienteId() {

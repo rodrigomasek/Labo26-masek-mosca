@@ -34,8 +34,10 @@ public class DronVigilancia extends Dron{
             for (int i = 0; i < this.getMision().obtenerKm(); i += 2) {
                 tomarFoto();
             }
+            this.getMision().setExito(true);
             return true;
         }
+        this.getMision().setExito(false);
         return false;
     }
 }

@@ -1,4 +1,4 @@
-package Sistema1;
+package administracion.SistemaConsumoBebida;
 
 class BebidaAzucarada extends Bebida {
     private double cantidadAzucar;
