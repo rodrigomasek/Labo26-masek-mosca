@@ -145,4 +145,48 @@ class Sistema {
 
         return true;
     }
+
+    public static void main(String[] args) {
+
+        Sistema sistema = new Sistema();
+
+        // Bebidas
+        Bebida agua = new BebidaNeutra("Agua", 10, 1);
+        Bebida gaseosa = new BebidaAzucarada("Gaseosa", 2);
+        Bebida cerveza = new BebidaAlcoholica("Cerveza", 5);
+
+        sistema.agregarBebida(agua);
+        sistema.agregarBebida(gaseosa);
+        sistema.agregarBebida(cerveza);
+
+        // Personas
+        Persona juan = new Persona("Juan", "Perez", 123);
+        Persona ana = new Persona("Ana", "Gomez", 456);
+
+        sistema.agregarPersona(juan);
+        sistema.agregarPersona(ana);
+
+        // Mostrar bebidas
+        sistema.mostrarBebidas();
+
+        // Registrar consumos
+        sistema.registrarConsumo(123, "Agua", 2);
+        sistema.registrarConsumo(123, "Cerveza", 1);
+        sistema.registrarConsumo(456, "Gaseosa", 2);
+
+        // Mostrar personas
+        sistema.mostrarPersonas();
+
+        // Mejor y peor
+        System.out.println(
+                "Mejor coeficiente: " +
+                        sistema.obtenerMejorCoeficiente().getNombre()
+        );
+
+        System.out.println(
+                "Peor coeficiente: " +
+                        sistema.obtenerPeorCoeficiente().getNombre()
+        );
+    }
+
 }
