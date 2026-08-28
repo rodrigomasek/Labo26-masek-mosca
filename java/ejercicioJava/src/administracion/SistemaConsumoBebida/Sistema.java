@@ -51,7 +51,7 @@ class Sistema {
     public void mostrarBebidas() {
 
         if (bebidas.isEmpty()) {
-            System.out.println("No hay bebidas cargadas.");
+            System.out.println("No hay bebidas cargada");
             return;
         }
 
@@ -59,10 +59,7 @@ class Sistema {
             Bebida bebida = bebidas.get(i);
 
             System.out.println(
-                    (i + 1) + ". " +
-                            bebida.getNombre() +
-                            " | Coeficiente: " +
-                            bebida.calcularCoeficiente()
+                    (i + 1) + ". " + bebida.getNombre() + "  Coeficiente: " + bebida.calcularCoeficiente()
             );
         }
     }
@@ -118,12 +115,7 @@ class Sistema {
         for (Persona persona : personas) {
 
             System.out.println(
-                    persona.getNombre() + " " +
-                            persona.getApellido() +
-                            " | DNI: " +
-                            persona.getDni() +
-                            " | Coeficiente: " +
-                            persona.calcularCoeficienteHidratacion()
+                    persona.getNombre() + " " + persona.getApellido() + "  DNI: " + persona.getDni() + "  Coeficiente: " + persona.calcularCoeficienteHidratacion()
             );
         }
     }
@@ -155,25 +147,24 @@ class Sistema {
         sistema.agregarBebida(gaseosa);
         sistema.agregarBebida(cerveza);
 
-        // Personas
+
         Persona juan = new Persona("Juan", "Perez", 123);
         Persona ana = new Persona("Ana", "Gomez", 456);
 
         sistema.agregarPersona(juan);
         sistema.agregarPersona(ana);
 
-        // Mostrar bebidas
+
         sistema.mostrarBebidas();
 
-        // Registrar consumos
+
         sistema.registrarConsumo(123, "Agua", 2);
         sistema.registrarConsumo(123, "Cerveza", 1);
         sistema.registrarConsumo(456, "Gaseosa", 2);
 
-        // Mostrar personas
+
         sistema.mostrarPersonas();
 
-        // Mejor y peor
         System.out.println(
                 "Mejor coeficiente: " +
                         sistema.obtenerMejorCoeficiente().getNombre()

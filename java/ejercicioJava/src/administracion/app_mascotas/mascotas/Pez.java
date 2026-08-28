@@ -1,7 +1,7 @@
 package administracion.app_mascotas.mascotas;
 
 public class Pez extends Mascota{
-    private int vida = 10;
+    private static int vida = 10;
 
     public Pez(String nombre, String dueño, int alegria) {
         super(nombre, dueño, alegria);
@@ -12,7 +12,7 @@ public class Pez extends Mascota{
     }
 
     public void setVida(int vida) {
-        this.vida = vida;
+        Pez.vida = vida;
     }
 
     @Override

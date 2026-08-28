@@ -44,10 +44,7 @@ class Persona {
     public void mostrarConsumos() {
         for (Consumo consumo : consumos) {
             System.out.println(
-                    consumo.getCantidad() + " x " +
-                            consumo.getBebida().getNombre() +
-                            " -> " +
-                            consumo.calcularCoeficiente()
+                    consumo.getCantidad() + " x " + consumo.getBebida().getNombre() + " -> " + consumo.calcularCoeficiente()
             );
         }
     }
