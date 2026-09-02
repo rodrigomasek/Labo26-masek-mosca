@@ -29,13 +29,5 @@ public class Empresa {
         }
         return null;
     }
-    public float asistenciaMensual()
-    {
-
-    }
-    public float asistenciaAnual()
-    {
-        
-    }
 
 }
