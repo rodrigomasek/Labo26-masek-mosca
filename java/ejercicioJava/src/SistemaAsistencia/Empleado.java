@@ -1,4 +1,4 @@
-package administracion.SistemaAsistencia;
+package SistemaAsistencia;
 
 import enums.DiasSemana;
 
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 
-public class Empleado extends Persona{
+public class Empleado extends Persona {
     private HashSet<DiasSemana> jornadaSemanal;
     private HashSet <LocalDateTime> asistencia;
     public Empleado(String nombre, String apellido, String telefono, LocalDate fNacimiento) {

@@ -1,10 +1,9 @@
-package administracion.SistemaAsistencia;
+package SistemaAsistencia;
 
 import enums.DiasSemana;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +33,7 @@ public class Empresa {
         }
         return null;
     }
-    public int diasPorMesQueSeSuponeQueLaburo(Empleado empleado,int mes, int anio)
+    public int diasPorMesQueSeSuponeQueLaburo(Empleado empleado, int mes, int anio)
     {
         int numDia;
         LocalDate dia;
@@ -58,7 +57,7 @@ public class Empresa {
         return -1;
     }
 
-    public int diasPorMesQueLaburo(Empleado empleado,int mes, int anio)
+    public int diasPorMesQueLaburo(Empleado empleado, int mes, int anio)
     {
         int dias = 0;
         for (LocalDateTime d : empleado.getAsistencia())
@@ -71,7 +70,7 @@ public class Empresa {
         return dias;
     }
 
-    public float asistenciaMensual(Empleado empleado,int mes, int anio)
+    public float asistenciaMensual(Empleado empleado, int mes, int anio)
     {
 
         if (diasPorMesQueSeSuponeQueLaburo(empleado, mes, anio) == -1)
@@ -82,23 +81,5 @@ public class Empresa {
         return (float) (diasPorMesQueLaburo(empleado, mes, anio)) / (diasPorMesQueSeSuponeQueLaburo(empleado,mes,anio));
     }
 
-    public ArrayList<Empleado> empleadosConMuchasGanasDeLaburar(int mes, int anio)
-    {
-        ArrayList<Empleado> empleados1 = null;
-        for(Empleado e : empleados.values())
-        {
-             if(asistenciaMensual(e, mes, anio) > 0.8)
-             {
-                 empleados1.add(e);
-             }
-        }
-        return empleados1;
-    }
-    public void imprimir(ArrayList<Empleado> lista)
-    {
-        for (Empleado e : lista)
-        {
-            System.out.println(e.getNombre() + " " + e.getApellido());
-        }
-    }
+
 }
