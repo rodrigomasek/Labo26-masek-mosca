@@ -25,14 +25,7 @@ public class Empresa {
 
     public Empleado buscarEmpleado(int legajo)
     {
-        if(empleados.containsKey(legajo))
-        {
-         for(Map.Entry<Integer, Empleado> entrada : empleados.entrySet())
-         {
-            if (entrada.getKey().equals(legajo)){return entrada.getValue();}
-         }
-        }
-        return null;
+        return empleados.get(legajo);
     }
     public int diasPorMesQueSeSuponeQueLaburo(Empleado empleado,int mes, int anio)
     {
