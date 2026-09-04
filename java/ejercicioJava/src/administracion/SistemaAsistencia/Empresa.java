@@ -77,7 +77,7 @@ public class Empresa {
 
     public ArrayList<Empleado> empleadosConMuchasGanasDeLaburar(int mes, int anio)
     {
-        ArrayList<Empleado> empleados1 = null;
+        ArrayList<Empleado> empleados1 = new ArrayList<>();
         for(Empleado e : empleados.values())
         {
              if(asistenciaMensual(e, mes, anio) > 0.8)

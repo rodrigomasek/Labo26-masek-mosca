@@ -2,7 +2,7 @@ package administracion.SistemaAsistencia;
 
 import java.time.LocalDate;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
     private String telefono;
