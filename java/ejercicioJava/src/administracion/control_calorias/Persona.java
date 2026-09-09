@@ -65,4 +65,12 @@ public class Persona {
 
         return cantidadTotal;
     }
+
+    public void consumirPlato(Plato plato){
+        platosComidos.put(plato, platosComidos.getOrDefault(plato, 0) + 1);
+    }
+
+    public String toString() {
+        return nombre;
+    }
 }

@@ -36,4 +36,8 @@ public class Plato {
     public void setCantCalorias(int cantCalorias) {
         this.cantCalorias = cantCalorias;
     }
+
+    public String toString() {
+        return nombre;
+    }
 }
