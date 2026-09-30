@@ -13,10 +13,6 @@ public class Componentes {
         this.stock = stock;
     }
 
-    public Componentes() {
-
-    }
-
     public String getNombreFabricante() {
         return nombreFabricante;
     }
@@ -47,5 +43,19 @@ public class Componentes {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public void aumentarPrecio(double porcentaje) {
+        precio += precio * porcentaje / 100;
+    }
+
+    public boolean hayStock() {
+        return stock > 0;
+    }
+
+    public void disminuirStock() {
+        if (stock > 0) {
+            stock--;
+        }
     }
 }
