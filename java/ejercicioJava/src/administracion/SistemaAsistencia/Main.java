@@ -30,18 +30,12 @@ public class Main {
         asistenciaJuan.add(LocalDateTime.of(2026, 9, 2, 8, 0));
         asistenciaJuan.add(LocalDateTime.of(2026, 9, 3, 8, 0));
         asistenciaJuan.add(LocalDateTime.of(2026, 9, 4, 8, 0));
-
-
         HashSet<LocalDateTime> asistenciaAna = new HashSet<>();
 
         asistenciaAna.add(LocalDateTime.of(2026, 9, 1, 8, 0));
         asistenciaAna.add(LocalDateTime.of(2026, 9, 3, 8, 0));
-
-
-
         Empleado juan = new Empleado("Juan", "Perez", "111111111", LocalDate.of(1995, 5, 10), jornadaJuan, asistenciaJuan);
-        Empleado ana = new Empleado("Ana", "Gomez", "222222222", LocalDate.of(1998, 8, 20), jornadaAna, asistenciaAna
-        );
+        Empleado ana = new Empleado("Ana", "Gomez", "222222222", LocalDate.of(1998, 8, 20), jornadaAna, asistenciaAna);
 
         HashMap<Integer, Empleado> empleados = new HashMap<>();
         empleados.put(1001, juan);

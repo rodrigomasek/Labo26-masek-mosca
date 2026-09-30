@@ -26,10 +26,7 @@ public class Empresa {
     {
         if(empleados.containsKey(legajo))
         {
-         for(Map.Entry<Integer, Empleado> entrada : empleados.entrySet())
-         {
-            if (entrada.getKey().equals(legajo)){return entrada.getValue();}
-         }
+            empleados.get(legajo);
         }
         return null;
     }
