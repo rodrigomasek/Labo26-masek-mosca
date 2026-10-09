@@ -47,11 +47,11 @@ public class Edificio {
                 if (opcion >= 0 && opcion < sensores.size()) {
                     entradaValida = true;
                 } else {
-                    System.out.println("Error: El número ingresado está fuera de rango. Intente nuevamente.");
+                    System.out.println("Error: fuera de rango. Intente nuevamente.");
                 }
 
             } catch (NumberFormatException e) {
-                System.out.println("Error: Debe ingresar obligatoriamente un número entero válido.");
+                System.out.println("Error: .");
             }
         }
 
