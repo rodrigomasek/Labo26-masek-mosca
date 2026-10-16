@@ -8,8 +8,8 @@ public class JugadorCampo extends Jugador{
     private int porcentajeGolesHechos;
     private int cantAsistencias;
 
-    public JugadorCampo(String nombre, LocalDate fechaNacimiento, String posicion, String provinciaOrigen, HashSet<String> historialClubes, int numCamiseta, int porcentajeGolesHechos, int cantAsistencias) {
-        super(nombre, fechaNacimiento, posicion, provinciaOrigen, historialClubes, numCamiseta);
+    public JugadorCampo(String nombre, LocalDate fechaNacimiento, HashSet<String> clubesTrabajados, String posicion, String provinciaOrigen, int porcentajeGolesHechos, int cantAsistencias) {
+        super(nombre, fechaNacimiento, clubesTrabajados, posicion, provinciaOrigen);
         this.porcentajeGolesHechos = porcentajeGolesHechos;
         this.cantAsistencias = cantAsistencias;
     }
@@ -28,5 +28,10 @@ public class JugadorCampo extends Jugador{
 
     public void setCantAsistencias(int cantAsistencias) {
         this.cantAsistencias = cantAsistencias;
+    }
+
+    @Override
+    public boolean fuiContratado(String nombre){
+        return super.fuiContratado(nombre) && cantAsistencias > 10 && porcentajeGolesHechos > 30;
     }
 }
