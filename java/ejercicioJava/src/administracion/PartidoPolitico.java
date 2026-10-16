@@ -70,7 +70,7 @@ public class PartidoPolitico {
     }
 
     public static void main(String[] args) {
-        // Crear una paloma mensajera
+
         PalomaMensajera paloma = new PalomaMensajera(
                 "Blanca",
                 "Piquito",
@@ -78,7 +78,7 @@ public class PartidoPolitico {
                 true
         );
 
-        // Crear un fabricante
+
         Fabricante fabricante = new Fabricante(
                 "Juan",
                 "Perez",
@@ -86,7 +86,7 @@ public class PartidoPolitico {
                 "Electrónica"
         );
 
-        // Crear un teléfono móvil
+
         TelefonoMovil telefono = new TelefonoMovil(
                 "12345",
                 fabricante,
@@ -95,7 +95,7 @@ public class PartidoPolitico {
                 CompañiaTelefonica.PERSONAL
         );
 
-        // Crear un trabajador
+
         Trabajador trabajador = new Trabajador(
                 "Carlos",
                 "Gomez",
@@ -107,14 +107,14 @@ public class PartidoPolitico {
                 LocalTime.of(18, 0)
         );
 
-        // Crear el conjunto de mensajeros
+
         HashSet<Mensajero> mensajeros = new HashSet<>();
 
         mensajeros.add(paloma);
         mensajeros.add(telefono);
         mensajeros.add(trabajador);
 
-        // Crear el partido político
+
         PartidoPolitico partido = new PartidoPolitico(
                 "Partido del Futuro",
                 "Av. Principal 456",
@@ -122,7 +122,7 @@ public class PartidoPolitico {
                 mensajeros
         );
 
-        // Realizar la campaña
+
         partido.hacerCampaña();
     }
 

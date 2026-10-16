@@ -38,5 +38,7 @@ public abstract class Diana {
         this.puntajeColor = puntajeColor;
     }
 
+    public abstract double calcularArea();
+
 
 }
