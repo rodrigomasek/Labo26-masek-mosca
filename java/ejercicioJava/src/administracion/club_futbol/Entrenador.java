@@ -7,8 +7,8 @@ public class Entrenador extends CuerpoTecnico{
     private int cantCampeonatosObtenidos;
     private boolean licenciaVigente;
 
-    public Entrenador(String nombre, LocalDate fechaNacimiento, String tituloProfesional, int añosXP, HashSet<String> clubesTrabajados, int cantCampeonatosObtenidos, boolean licenciaVigente) {
-        super(nombre, fechaNacimiento, tituloProfesional, añosXP, clubesTrabajados);
+    public Entrenador(String nombre, LocalDate fechaNacimiento, HashSet<String> clubesTrabajados, String tituloProfesional, int añosXP, int cantCampeonatosObtenidos, boolean licenciaVigente) {
+        super(nombre, fechaNacimiento, clubesTrabajados, tituloProfesional, añosXP);
         this.cantCampeonatosObtenidos = cantCampeonatosObtenidos;
         this.licenciaVigente = licenciaVigente;
     }
@@ -27,5 +27,15 @@ public class Entrenador extends CuerpoTecnico{
 
     public void setLicenciaVigente(boolean licenciaVigente) {
         this.licenciaVigente = licenciaVigente;
+    }
+
+    @Override
+    public boolean fuiContratado(String nombre){
+        return super.fuiContratado(nombre) && licenciaVigente && super.getAñosXP() > 3;
+    }
+
+    @Override
+    public boolean puedeRenovar(){
+        return licenciaVigente;
     }
 }

@@ -8,9 +8,8 @@ public class Arquero extends Jugador{
     private int porcentajeAtajado;
     private int golesRecibidosUltTemporada;
 
-
-    public Arquero(String nombre, LocalDate fechaNacimiento, String posicion, String provinciaOrigen, HashSet<String> historialClubes, int numCamiseta, int porcentajeAtajado, int golesRecibidosUltTemporada) {
-        super(nombre, fechaNacimiento, posicion, provinciaOrigen, historialClubes, numCamiseta);
+    public Arquero(String nombre, LocalDate fechaNacimiento, HashSet<String> clubesTrabajados, String posicion, String provinciaOrigen, int porcentajeAtajado, int golesRecibidosUltTemporada) {
+        super(nombre, fechaNacimiento, clubesTrabajados, posicion, provinciaOrigen);
         this.porcentajeAtajado = porcentajeAtajado;
         this.golesRecibidosUltTemporada = golesRecibidosUltTemporada;
     }
@@ -29,5 +28,10 @@ public class Arquero extends Jugador{
 
     public void setGolesRecibidosUltTemporada(int golesRecibidosUltTemporada) {
         this.golesRecibidosUltTemporada = golesRecibidosUltTemporada;
+    }
+
+    @Override
+    public boolean fuiContratado(String nombre){
+        return super.fuiContratado(nombre) && porcentajeAtajado > 60 && golesRecibidosUltTemporada < 10;
     }
 }

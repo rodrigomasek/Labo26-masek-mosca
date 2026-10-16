@@ -7,8 +7,8 @@ public class PreparadorFisico extends CuerpoTecnico{
     private String especialidad;
     private boolean tieneMatricula;
 
-    public PreparadorFisico(String nombre, LocalDate fechaNacimiento, String tituloProfesional, int añosXP, HashSet<String> clubesTrabajados, String especialidad, boolean tieneMatricula) {
-        super(nombre, fechaNacimiento, tituloProfesional, añosXP, clubesTrabajados);
+    public PreparadorFisico(String nombre, LocalDate fechaNacimiento, HashSet<String> clubesTrabajados, String tituloProfesional, int añosXP, String especialidad, boolean tieneMatricula) {
+        super(nombre, fechaNacimiento, clubesTrabajados, tituloProfesional, añosXP);
         this.especialidad = especialidad;
         this.tieneMatricula = tieneMatricula;
     }
@@ -27,5 +27,15 @@ public class PreparadorFisico extends CuerpoTecnico{
 
     public void setTieneMatricula(boolean tieneMatricula) {
         this.tieneMatricula = tieneMatricula;
+    }
+
+    @Override
+    public boolean fuiContratado(String nombre){
+        return super.fuiContratado(nombre) && tieneMatricula && super.getAñosXP() >= 2;
+    }
+
+    @Override
+    public boolean puedeRenovar(){
+        return tieneMatricula;
     }
 }
