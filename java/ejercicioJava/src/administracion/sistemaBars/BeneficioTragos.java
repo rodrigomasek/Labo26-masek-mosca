@@ -1,3 +1,5 @@
+package administracion.sistemaBars;
+
 import java.util.HashSet;
 
 public class BeneficioTragos extends Beneficio{

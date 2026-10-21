@@ -1,3 +1,5 @@
+package administracion.sistemaBars;
+
 import enums.ColorDianas;
 
 import java.util.ArrayList;
@@ -43,9 +45,9 @@ public class SistemaBares {
         mapaPuntajes2.put(40, ColorDianas.AMARILLO);
         mapaPuntajes2.put(100, ColorDianas.NEGRO);
 
-        Diana circular = new DianaCircular("Diana Circular 1", 3, mapaPuntajes1);
-        Diana rectangular = new DianaRectangular("Diana Rectangular 1", 5, mapaPuntajes2, 10.5f, 20.0f);
-        Diana cuadrada = new DianaCuadrada("Diana Cuadrada 1", 2, mapaPuntajes1, 15.0f);
+        Diana circular = new DianaCircular("Circular 1", 3, mapaPuntajes1);
+        Diana rectangular = new DianaRectangular("Rectangular 1", 5, mapaPuntajes2, 10.5f, 20.0f);
+        Diana cuadrada = new DianaCuadrada("Cuadrada 1", 2, mapaPuntajes1, 15.0f);
 
         ArrayList<Diana> dianasBar1 = new ArrayList<>();
         dianasBar1.add(circular);
@@ -87,9 +89,9 @@ public class SistemaBares {
         Sistema sistema = new Sistema(listaBares);
 
         Diana masPuntajes = sistema.dianaConMasPuntajes();
-        System.out.println("Diana con mas puntajes: " + masPuntajes.getNombre());
+        System.out.println(" con mas puntajes: " + masPuntajes.getNombre());
 
-        System.out.println("Cantidad de beneficios de tragos en Bar 1: " + bar1.cantBeneficiosTragos());
+        System.out.println("Cantidad de beneficios de tragos: " + bar1.cantBeneficiosTragos());
         System.out.println("Area Diana Circular: " + circular.calcularArea());
         System.out.println("Descuento Extra Comidas: " + beneficioComidas.calcularDescuentoExtra());
     }
